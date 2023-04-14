@@ -20,5 +20,18 @@ INSERT INTO role (title, salary, department_id)
            ('Graphic Designer', 50000, 5);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-    VALUES ('Mark', 'Harris', 4, NULL),
-           ('Yvette', 'Brown', 2, 1);
+    VALUES ('Rose', 'Nylund', 10, 2),
+           ('Dorothy', 'Zbornak', 8, NULL),
+           ('Blanche', 'Devereaux', 9, 2),
+           ('Sofia', 'Petrillo', 11, NULL),
+           ('Leslie', 'Knope', 3, NULL),
+           ('Ann', 'Perkins', 12, 4),
+           ('Mark', 'Brendanawicz', 2, 5),
+           ('Tom', 'Haverford', 10, 2),
+           ('Ron', 'Swanson', 6, NULL),
+           ('April', 'Ludgate', 7, 9),
+           ('Andy', 'Dwyer', 1, 5),
+           ('Ben', 'Wyatt', 5, 13),
+           ('Chris', 'Traeger', 4, NULL),
+           ('Jerry', 'Gergich', 5, 13),
+           ('Donna', 'Meagle', 10, 2),

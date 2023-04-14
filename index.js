@@ -14,6 +14,7 @@ const db = mysql.createConnection(
         user: 'root',
         password: '12345678',
         database: 'company_db',
+        rowsAsArray: true
     },
     console.log(`Connected to the company_db database.`)
 )
@@ -43,9 +44,9 @@ function employeeManager() {
                 case 'View all roles':
                     const viewRoles = `SELECT role.id, role.title AS job_title, role.salary, department.name AS department
                     FROM role
-                    LEFT JOIN department ON role.department_id = department.id`;
+                    LEFT JOIN department ON role.department_id = department.id;`;
 
-                    db.query(viewRoles, (err, results) => console.table(results));
+                    db.query(viewRoles, (err, results) => console.log(results));
 
                     employeeManager();
 

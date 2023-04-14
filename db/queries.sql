@@ -8,11 +8,7 @@ FROM role
 LEFT JOIN department ON role.department_id = department.id
 
 --see roles & department name
-SELECT
-    role.id,
-    role.title AS job_title,
-    role.salary,
-    department.name AS department
+SELECT role.id, role.title AS title, role.salary, department.name AS department
 FROM role
 LEFT JOIN department ON role.department_id = department.id;
 
