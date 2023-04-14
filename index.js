@@ -3,9 +3,6 @@ const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const consoleTable = require('console.table');
 
-//import prompts
-const prompts = require('./prompts');
-
 //import helper functions
 
 const db = mysql.createConnection(
@@ -21,13 +18,26 @@ const db = mysql.createConnection(
 
 // const employeeList = prompts.employees;
 // const rolesList = prompts.roles;
-// const departmentList = prompts.departments;
 
 
 //inquirer
 function employeeManager() {
     inquirer
-        .prompt(prompts.options)
+        .prompt({
+            type: 'list',
+            message: 'What would you like to do?',
+            name: 'task',
+            choices: [
+                'View all departments',
+                'View all roles',
+                'View all employees',
+                'Add a department',
+                'Add a role',
+                'Add an employee',
+                'Update an employee role',
+                'Quit'
+            ],
+        })
         .then((input) => {
             console.log(input);
             
