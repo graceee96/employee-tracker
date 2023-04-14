@@ -5,9 +5,22 @@ const consoleTable = require('console.table');
 
 //import prompts
 const prompts = require('./prompts');
-const employeeList = prompts.employees;
-const rolesList = prompts.roles;
-const departmentList = prompts.departments;
+
+//import helper functions
+
+const db = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: '12345678',
+        database: 'company_db',
+    },
+    console.log(`Connected to the company_db database.`)
+)
+
+// const employeeList = prompts.employees;
+// const rolesList = prompts.roles;
+// const departmentList = prompts.departments;
 
 
 //inquirer
@@ -20,12 +33,25 @@ function employeeManager() {
             //switch statements
             switch (input.task) {
                 case 'View all departments':
+                    const viewDepartments = `SELECT * FROM company_db.department`;
+
+                    db.query(viewDepartments, (err, results) => console.table(results));
+
                     employeeManager();
+
                     break;
                 case 'View all roles':
+                    const viewRoles = `SELECT role.id, role.title AS job_title, role.salary, department.name AS department
+                    FROM role
+                    LEFT JOIN department ON role.department_id = department.id`;
+
+                    db.query(viewRoles, (err, results) => console.table(results));
+
                     employeeManager();
+
                     break;
                 case 'View all employees':
+                    //need to do self join
                     employeeManager();
                     break;
                 case 'Add a department':

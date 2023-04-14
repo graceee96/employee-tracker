@@ -45,6 +45,8 @@ const cliPrompt = {
 
     roles: [],
 
+    managers: [],
+
     addEmployee: [
         {
             type: 'input',
@@ -60,13 +62,13 @@ const cliPrompt = {
             type: 'list',
             message: 'What is the employee\'s role?',
             name: 'new_role',
-            choices: []
+            choices: this.roles
         },
         {
             type: 'list',
             message: 'Who is the employee\'s manager?',
             name: 'new_manager',
-            choices: []
+            choices: this.managers
         }
     ],
 
@@ -77,13 +79,13 @@ const cliPrompt = {
             type: 'list',
             message: 'Which employee\'s role do you want to update?',
             name: 'update_employee',
-            choices: [],
+            choices: this.employees,
         },
         {
             type: 'list',
             message: 'Which role do you want to assign to the selected employee?',
             name: 'update_role',
-            choices: [],
+            choices: this.roles,
         }
     ]
 }
