@@ -12,9 +12,29 @@ const db = mysql.createConnection(
     console.log(`Connected to the company_db database.`)
 );
 
-//SEE LIST OF DEPARTMENTS
-//turn result into a single array with just the values of the objects
-db.query('SELECT department.name FROM department', (err, results) => {
-    let departmentList = results.map(a => a.name)
-    console.log(departmentList);
-})
+function addRole() {
+    inquirer
+        .prompt ([
+            {
+                type: 'input',
+                message: 'What is the name of the new role?',
+                name: 'title',
+            },
+            {
+                type: 'number',
+                message: 'What is the salary for this position?',
+                name: 'salary',
+            },
+            {
+                type: 'input',
+                message: 'What department is this role in?',
+                name: 'departments',
+            }
+        ])
+        .then ((input) => {
+            console.log(input);
+            
+        })
+}
+
+module.exports = addRole;

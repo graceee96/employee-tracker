@@ -15,6 +15,9 @@ const db = mysql.createConnection(
 );
 
 //import helper functions
+const viewAllDepartments = require('./helpers/viewAllDepartments');
+const viewAllRoles = require('./helpers/viewAllRoles');
+const viewAllEmployees = require('./helpers/viewAllEmployees')
 const addDepartment = require('./helpers/addDepartment');
 
 
@@ -42,39 +45,19 @@ function employeeManager() {
             //switch statements
             switch (input.task) {
                 case 'View all departments':
-                    const departmentTable = `SELECT department.id AS department_id, department.name AS department
-                    FROM department;`;
-
-                    db.query(departmentTable, (err, results) => console.table(results));
+                    viewAllDepartments();
 
                     employeeManager();
 
                     break;
                 case 'View all roles':
-                    const rolesTable = `SELECT role.id, role.title AS title, role.salary, department.name AS department
-                    FROM role
-                    LEFT JOIN department ON role.department_id = department.id`;
-
-                    db.query(rolesTable, (err, results) => console.table(results));
+                    viewAllRoles();
 
                     employeeManager();
 
                     break;
                 case 'View all employees':
-                    const employeeTable = `SELECT
-                    e.id,
-                    e.first_name,
-                    e.last_name,
-                    role.title AS title,
-                    department.name AS department,
-                    CONCAT_WS(' ' , m.first_name, m.last_name) AS manager
-                FROM employee e
-                    INNER JOIN role ON e.role_id = role.id
-                    INNER JOIN department ON role.department_id = department.id
-                    LEFT JOIN employee m ON m.id = e.manager_id
-                    ORDER BY e.id`;
-
-                    db.query(employeeTable, (err, results) => console.table(results));
+                    viewAllEmployees();
 
                     employeeManager();
                     break;
