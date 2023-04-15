@@ -8,14 +8,14 @@ const db = mysql.createConnection(
         user: 'root',
         password: '12345678',
         database: 'company_db',
-        rowsAsArray: true,
     },
     console.log(`Connected to the company_db database.`)
 );
 
-//prompt user to input new department
+
 function addDepartment() {
     inquirer
+        //prompt user to input new department
         .prompt({
             type: 'input',
             message: 'What is the name of the department?',
@@ -23,14 +23,20 @@ function addDepartment() {
         })
         .then((input) => {
             //.then add input to department table
-            console.log(input);
+            // console.log(input);
 
-            const insertDepartment = `INSERT INTO department (name) VALUES (${input.new_department})`;
+            const insertDepartment = `INSERT INTO department (name) VALUES (?)`;
 
-            db.query(insertDepartment, (err, result) => console.log(result))
+            db.query(insertDepartment, input.new_department, (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    // console.log(result);
+                    console.log(`Successfully added new department: ${input.new_department}`)
+                }
+            });
         })
 };
-addDepartment();
 
 module.exports = addDepartment;
 

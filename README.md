@@ -8,6 +8,7 @@ https://onlineasciitools.com/convert-text-to-ascii-art
 https://www.sqlshack.com/sql-multiple-joins-for-beginners-with-examples/
 https://www.sqlservertutorial.net/sql-server-basics/sql-server-self-join/
 https://stackoverflow.com/questions/18860233/mysql-select-as-combine-two-columns-into-one
+https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array
 
 Update employee managers.
 

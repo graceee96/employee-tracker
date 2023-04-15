@@ -3,8 +3,6 @@ const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const consoleTable = require('console.table');
 
-//import helper functions
-
 const db = mysql.createConnection(
     {
         host: 'localhost',
@@ -14,10 +12,10 @@ const db = mysql.createConnection(
         // rowsAsArray: true,
     },
     console.log(`Connected to the company_db database.`)
-)
+);
 
-// const employeeList = prompts.employees;
-// const rolesList = prompts.roles;
+//import helper functions
+const addDepartment = require('./helpers/addDepartment');
 
 
 //inquirer
@@ -81,6 +79,8 @@ function employeeManager() {
                     employeeManager();
                     break;
                 case 'Add a department':
+                    addDepartment();
+
                     employeeManager();
                     break;
                 case 'Add a role':

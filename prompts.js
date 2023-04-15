@@ -45,7 +45,7 @@ const cliPrompt = {
         {
             type: 'input',
             message: 'What is the name of the new role?',
-            name: 'role_name',
+            name: 'title',
         },
         {
             type: 'number',
@@ -55,7 +55,7 @@ const cliPrompt = {
         {
             type: 'input',
             message: 'What department is this role in?',
-            name: departments,
+            name: 'departments',
         }
     ],
 
