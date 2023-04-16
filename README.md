@@ -1,22 +1,30 @@
-# employee-tracker
+# Employee Tracker
 
-** self-referencing table
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-https://www.w3schools.com/sql/sql_foreignkey.asp
+## Description
+The Employee Tracker is a content management system (CMS) where business owners can view and manage the departments, roles, and employees in their company. Business owners are able to organize and plan their business using this application.
 
-https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Employee%0AManager
-https://www.sqlshack.com/sql-multiple-joins-for-beginners-with-examples/
-https://www.sqlservertutorial.net/sql-server-basics/sql-server-self-join/
-https://stackoverflow.com/questions/18860233/mysql-select-as-combine-two-columns-into-one
-https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array
-https://stackoverflow.com/questions/66626936/inquirer-js-populate-list-choices-from-sql-database
+## Installation
+1. Download the repository by running ```git clone <SSH key>``` in the command line interface.
+2. Install the following dependencies to run the application
+    * inquirer v 8.2.4: ```npm i inquirer@8.2.4```
+    * console.table: ```npm i console.table```
+    * mysql2: ```npm i mysql2```
 
-Update employee managers.
+## Usage
+After installation, run ```node index.js``` to start the application. Navigate the menu using the arrow keys (↑ and ↓), and hit ```enter``` (or ```return``` for Mac users) to select an action. For actions to add new departments, to add new roles, or to add new employees, answer the prompts to update the database with the new entry. To see the menu again, press the arrow keys (↑ and ↓) again and pick a new task. Otherwise, select ```Quit``` to exit out of the program.
 
-View employees by manager.
+### Link to video walkthrough
 
-View employees by department.
+## Credits
+Made with help from Scott McAnally (tutor)
 
-Delete departments, roles, and employees.
+### Resources Accessed
+* Title made with [Text to ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Employee%0AManager) by [patorjk](https://github.com/patorjk)
+* Esat Erkec - [SQL multiple joins for beginners with examples](https://www.sqlshack.com/sql-multiple-joins-for-beginners-with-examples/)
+* SQLServerTutorial.Net - [SQL Server Self Join](https://www.sqlservertutorial.net/sql-server-basics/sql-server-self-join/)
+* Stack Overflow - [MySQL SELECT AS combine two columns into one](https://stackoverflow.com/questions/18860233/mysql-select-as-combine-two-columns-into-one)
 
-View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
+## License
+This repository is licensed under the [MIT License](https://opensource.org/licenses/MIT).
