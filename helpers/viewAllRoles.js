@@ -1,5 +1,5 @@
 //import dependencies
-const inquirer = require('inquirer');
+const consoleTable = require('console.table');
 const mysql = require('mysql2');
 
 const db = mysql.createConnection(
@@ -15,7 +15,7 @@ const db = mysql.createConnection(
 function viewAllRoles() {
     const rolesTable = 'SELECT role.id, role.title AS title, role.salary, department.name AS department FROM role LEFT JOIN department ON role.department_id = department.id';
 
-    db.query(rolesTable, (err, results) => console.table(results));
+    db.query(rolesTable, (err, results) => console.log(consoleTable.getTable(results)));
 };
 
 module.exports = viewAllRoles;

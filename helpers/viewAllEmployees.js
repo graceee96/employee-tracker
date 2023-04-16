@@ -1,5 +1,6 @@
 //import dependencies
 const mysql = require('mysql2');
+const consoleTable = require('console.table');
 
 const db = mysql.createConnection(
     {
@@ -25,7 +26,7 @@ FROM employee e
     LEFT JOIN employee m ON m.id = e.manager_id
 	ORDER BY e.id;`;
 
-    db.query(employeeTable, (err, results) => console.table(results));
+    db.query(employeeTable, (err, results) => console.log(consoleTable.getTable(results)));
 };
 
 module.exports = viewAllEmployees;
