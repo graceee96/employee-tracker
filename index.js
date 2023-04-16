@@ -19,6 +19,8 @@ const viewAllDepartments = require('./helpers/viewAllDepartments');
 const viewAllRoles = require('./helpers/viewAllRoles');
 const viewAllEmployees = require('./helpers/viewAllEmployees')
 const addDepartment = require('./helpers/addDepartment');
+const addRole = require('./helpers/addRole');
+const addEmployee = require('./helpers/addEmployee');
 
 
 //inquirer
@@ -40,40 +42,43 @@ function employeeManager() {
             ],
         })
         .then((input) => {
-            console.log(input);
+            // console.log(input);
             
             //switch statements
             switch (input.task) {
                 case 'View all departments':
                     viewAllDepartments();
 
-                    employeeManager();
+                    //employeeManager();
 
                     break;
                 case 'View all roles':
                     viewAllRoles();
 
-                    employeeManager();
+                    //employeeManager();
 
                     break;
                 case 'View all employees':
                     viewAllEmployees();
 
-                    employeeManager();
+                    //employeeManager();
                     break;
                 case 'Add a department':
                     addDepartment();
 
-                    employeeManager();
+                    //employeeManager();
                     break;
                 case 'Add a role':
-                    employeeManager();
+                    addRole();
+
+                    //employeeManager();
                     break;
                 case 'Add an employee':
-                    employeeManager();
+                    addEmployee();
+                    //employeeManager();
                     break;
                 case 'Update an employee role':
-                    employeeManager();
+                    //employeeManager();
                     break;
                 case 'Quit':
                     return;
@@ -85,20 +90,19 @@ function employeeManager() {
 function init() {
     console.log(`
     
-    ::::::::::   :::   :::   :::::::::  :::        ::::::::  :::   ::: :::::::::: :::::::::: 
-    :+:         :+:+: :+:+:  :+:    :+: :+:       :+:    :+: :+:   :+: :+:        :+:         
-   +:+        +:+ +:+:+ +:+ +:+    +:+ +:+       +:+    +:+  +:+ +:+  +:+        +:+          
-  +#++:++#   +#+  +:+  +#+ +#++:++#+  +#+       +#+    +:+   +#++:   +#++:++#   +#++:++#      
- +#+        +#+       +#+ +#+        +#+       +#+    +#+    +#+    +#+        +#+            
-#+#        #+#       #+# #+#        #+#       #+#    #+#    #+#    #+#        #+#             
-########## ###       ### ###        ########## ########     ###    ########## ##########       
-       :::   :::       :::     ::::    :::     :::      ::::::::  :::::::::: :::::::::        
-     :+:+: :+:+:    :+: :+:   :+:+:   :+:   :+: :+:   :+:    :+: :+:        :+:    :+:        
-   +:+ +:+:+ +:+  +:+   +:+  :+:+:+  +:+  +:+   +:+  +:+        +:+        +:+    +:+         
-  +#+  +:+  +#+ +#++:++#++: +#+ +:+ +#+ +#++:++#++: :#:        +#++:++#   +#++:++#:           
- +#+       +#+ +#+     +#+ +#+  +#+#+# +#+     +#+ +#+   +#+# +#+        +#+    +#+           
-#+#       #+# #+#     #+# #+#   #+#+# #+#     #+# #+#    #+# #+#        #+#    #+#            
-###       ### ###     ### ###    #### ###     ###  ########  ########## ###    ###
+███████╗███╗   ███╗██████╗ ██╗      ██████╗ ██╗   ██╗███████╗███████╗
+██╔════╝████╗ ████║██╔══██╗██║     ██╔═══██╗╚██╗ ██╔╝██╔════╝██╔════╝
+█████╗  ██╔████╔██║██████╔╝██║     ██║   ██║ ╚████╔╝ █████╗  █████╗  
+██╔══╝  ██║╚██╔╝██║██╔═══╝ ██║     ██║   ██║  ╚██╔╝  ██╔══╝  ██╔══╝  
+███████╗██║ ╚═╝ ██║██║     ███████╗╚██████╔╝   ██║   ███████╗███████╗
+╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝
+                                                                     
+███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗        
+████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗       
+██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝       
+██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗       
+██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║       
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝ 
 
 
 `);
@@ -107,3 +111,5 @@ employeeManager();
 };
 
 init();
+
+module.exports = employeeManager;

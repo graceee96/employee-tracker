@@ -1,4 +1,4 @@
-//import dependencies
+//import dependencies - for testing
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
@@ -35,6 +35,7 @@ function addDepartment() {
                     console.log(`Successfully added new department: ${input.new_department}`)
                 }
             });
+
         })
 };
 

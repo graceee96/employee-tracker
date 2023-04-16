@@ -10,7 +10,7 @@ const db = mysql.createConnection(
         database: 'company_db',
     },
     console.log(`Connected to the company_db database.`)
-);
+).promise();
 
 function addRole() {
     inquirer
@@ -26,15 +26,28 @@ function addRole() {
                 name: 'salary',
             },
             {
-                type: 'input',
+                type: 'list',
                 message: 'What department is this role in?',
                 name: 'departments',
+                choices: [] //??????
             }
         ])
         .then ((input) => {
             console.log(input);
-            
-        })
-}
+            const insertRole = `INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`;
+            const roleInfo = [input.title, input.salary, input.departments];
 
-module.exports = addRole;
+            db.query(insertRole, roleInfo, (err, result)) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(result);
+                    console.log(`Successfully added new role: ${input.title} ($${input.salary} | ${input.departments})`)
+                }
+            }
+        })
+};
+
+addRole();
+
+// module.exports = addRole;
