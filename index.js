@@ -86,6 +86,8 @@ function employeeManager() {
         })
 }
 
+module.exports = employeeManager;
+
 //init function - display title & employeeManager()
 function init() {
     console.log(`
@@ -112,4 +114,3 @@ employeeManager();
 
 init();
 
-module.exports = employeeManager;
