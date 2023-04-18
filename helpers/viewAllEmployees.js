@@ -26,7 +26,7 @@ FROM employee e
     LEFT JOIN employee m ON m.id = e.manager_id
 	ORDER BY e.id;`;
 
-    db.query(employeeTable, (err, results) => console.log(consoleTable.getTable(results)));
+    db.query(employeeTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
 };
 
 module.exports = viewAllEmployees;
