@@ -8,41 +8,63 @@ const db = mysql.createConnection(
         user: 'root',
         password: '12345678',
         database: 'company_db',
-    },
-    console.log(`Connected to the company_db database.`)
+    }
 );
 
 function updateEmployeeRole() {
-    db.query()
-    inquirer
-        .prompt([
-            {
-                type: 'list',
-                message: 'Which employee\'s role do you want to update?',
-                name: 'update_employee',
-                choices: this.employees,
-            },
-            {
-                type: 'list',
-                message: 'Which role do you want to assign to the selected employee?',
-                name: 'update_role',
-                choices: this.roles,
-            }
-        ])
-        .then((input) => {
-            console.log(input);
-
-            const updateEmployee = `UPDATE employee SET role_id = ? WHERE first_name = ?`;
-            const updateInfo = [input.update_employee, input.update_role];
-
-            db.query(updateEmployee, updateInfo, (err, result) => {
+    db.query('SELECT * FROM role', (err, result) => {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log(`Successfully updated ${input.update_employee}'s role to ${input.update_role}`)
+                    const role = result.map(a => ({
+                        name: a.title,
+                        value: a.id,
+                    }));
+
+                    db.query('SELECT * FROM employee', (err, result) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            const employee = result.map(a => ({
+                                name: a.first_name + ' ' + a.last_name,
+                                value: a.id
+                            }));
+
+                    inquirer
+                        .prompt([
+                            {
+                                type: 'list',
+                                message: 'Which employee\'s role do you want to update?',
+                                name: 'update_employee',
+                                choices: employee,
+                            },
+                            {
+                                type: 'list',
+                                message: 'Which role do you want to assign to the selected employee?',
+                                name: 'update_role',
+                                choices: role,
+                            }
+                        ])
+                        .then((input) => {
+                            // console.log(input);
+
+                            const updateEmployee = `UPDATE company_db.employee SET role_id = ? WHERE id = ?`;
+                            const updateInfo = [input.update_employee, input.update_role];
+
+                            db.query(updateEmployee, updateInfo, (err, result) => {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    console.log(`Successfully updated ${input.update_employee}'s role to ${input.update_role}`)
+                                }
+                            })
+                        })
                 }
             })
-        })
+        }
+    })
+    
+        
 };
 
-module.exports = updateEmployeeRole();
+module.exports = updateEmployeeRole;

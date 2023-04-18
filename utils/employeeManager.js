@@ -7,6 +7,7 @@ const viewAllEmployees = require('./viewAllEmployees')
 const addDepartment = require('./addDepartment');
 const addRole = require('./addRole');
 const addEmployee = require('./addEmployee');
+const updateEmployeeRole = require('./updateEmployeeRole');
 
 function employeeManager() {
     inquirer
@@ -55,13 +56,13 @@ function employeeManager() {
 
                     break;
                 case 'Update an employee role':
+                    updateEmployeeRole();
                     
                     break;
                 case 'Quit':
                     return;
             };
 
-            // employeeManager();
         })
 }
 
