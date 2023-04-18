@@ -16,7 +16,7 @@ const db = mysql.createConnection(
 function viewAllRoles() {
     const rolesTable = 'SELECT role.id, role.title AS title, role.salary, department.name AS department FROM role LEFT JOIN department ON role.department_id = department.id';
 
-    db.query(rolesTable, (err, results) => console.log(consoleTable.getTable(results)));
+    db.query(rolesTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
 
     // employeeManager();
     // console.log(employeeManager)

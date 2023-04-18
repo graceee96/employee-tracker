@@ -59,7 +59,7 @@ function addEmployee() {
                             }
                         ])
                         .then((input) => {
-                            console.log(input);
+                            // console.log(input);
                             const insertEmployee = `INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`;
                             const employeeInfo = [input.new_firstname, input.new_lastname, input.new_role, input.new_manager];
 
