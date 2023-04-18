@@ -16,7 +16,7 @@ function viewAllDepartments() {
     const departmentTable = 'SELECT department.id AS department_id, department.name AS department FROM department';
 
     db.query(departmentTable, (err, results) => {
-        console.log(consoleTable.getTable(results));
+        console.log('\n' + consoleTable.getTable(results));
     });
 };
 
