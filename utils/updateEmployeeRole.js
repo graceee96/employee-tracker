@@ -13,22 +13,22 @@ const db = mysql.createConnection(
 
 function updateEmployeeRole() {
     db.query('SELECT * FROM role', (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            const role = result.map(a => ({
+                name: a.title,
+                value: a.id,
+            }));
+
+            db.query('SELECT * FROM employee', (err, result) => {
                 if (err) {
                     console.log(err);
                 } else {
-                    const role = result.map(a => ({
-                        name: a.title,
-                        value: a.id,
+                    const employee = result.map(a => ({
+                        name: a.first_name + ' ' + a.last_name,
+                        value: a.id
                     }));
-
-                    db.query('SELECT * FROM employee', (err, result) => {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            const employee = result.map(a => ({
-                                name: a.first_name + ' ' + a.last_name,
-                                value: a.id
-                            }));
 
                     inquirer
                         .prompt([
@@ -56,15 +56,14 @@ function updateEmployeeRole() {
                                     console.log(err);
                                 } else {
                                     console.log(`Successfully updated ${input.update_employee}'s role to ${input.update_role}`)
-                                }
-                            })
-                        })
-                }
-            })
-        }
-    })
-    
-        
+                                };
+                            });
+                        });
+                };
+            });
+        };
+    });
 };
+
 
 module.exports = updateEmployeeRole;
