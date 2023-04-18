@@ -10,7 +10,7 @@ const db = mysql.createConnection(
         database: 'company_db',
     },
     console.log(`Connected to the company_db database.`)
-).promise();
+);
 
 function updateEmployeeRole() {
     inquirer

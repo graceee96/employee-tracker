@@ -19,7 +19,7 @@ const viewAllDepartments = require('./helpers/viewAllDepartments');
 const viewAllRoles = require('./helpers/viewAllRoles');
 const viewAllEmployees = require('./helpers/viewAllEmployees')
 const addDepartment = require('./helpers/addDepartment');
-// const addRole = require('./helpers/addRole');
+const addRole = require('./helpers/addRole');
 const addEmployee = require('./helpers/addEmployee');
 
 
@@ -69,7 +69,7 @@ function employeeManager() {
                     //employeeManager();
                     break;
                 case 'Add a role':
-                    // addRole();
+                    addRole();
 
                     //employeeManager();
                     break;
