@@ -49,13 +49,13 @@ function updateEmployeeRole() {
                             // console.log(input);
 
                             const updateEmployee = `UPDATE company_db.employee SET role_id = ? WHERE id = ?`;
-                            const updateInfo = [input.update_employee, input.update_role];
+                            const updateInfo = [input.update_role, input.update_employee];
 
                             db.query(updateEmployee, updateInfo, (err, result) => {
                                 if (err) {
                                     console.log(err);
                                 } else {
-                                    console.log(`Successfully updated ${input.update_employee}'s role to ${input.update_role}`)
+                                    console.log(`Successfully updated role`)
                                 };
                             });
                         });
