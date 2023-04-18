@@ -9,18 +9,17 @@ const db = mysql.createConnection(
         user: 'root',
         password: '12345678',
         database: 'company_db',
-        // rowsAsArray: true,
     },
     console.log(`Connected to the company_db database.`)
 );
 
 //import helper functions
-const viewAllDepartments = require('./helpers/viewAllDepartments');
-const viewAllRoles = require('./helpers/viewAllRoles');
-const viewAllEmployees = require('./helpers/viewAllEmployees')
-const addDepartment = require('./helpers/addDepartment');
-const addRole = require('./helpers/addRole');
-const addEmployee = require('./helpers/addEmployee');
+const viewAllDepartments = require('./utils/viewAllDepartments');
+const viewAllRoles = require('./utils/viewAllRoles');
+const viewAllEmployees = require('./utils/viewAllEmployees')
+const addDepartment = require('./utils/addDepartment');
+const addRole = require('./utils/addRole');
+const addEmployee = require('./utils/addEmployee');
 
 
 //inquirer

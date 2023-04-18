@@ -13,6 +13,7 @@ const db = mysql.createConnection(
 );
 
 function updateEmployeeRole() {
+    db.query()
     inquirer
         .prompt([
             {
