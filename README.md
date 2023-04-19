@@ -16,7 +16,7 @@ The Employee Tracker is a content management system (CMS) where business owners 
 After installation, run ```node index.js``` to start the application. Navigate the menu using the arrow keys (↑ and ↓), and hit ```enter``` (or ```return``` for Mac users) to select an action. For actions to add new departments, to add new roles, or to add new employees, answer the prompts to update the database with the new entry. Pick another task action when the menu appears. If there are no other tasks to run, select ```Quit``` to exit out of the program.
 
 ### Link to video walkthrough
-
+https://drive.google.com/file/d/1JujiLlH93ZwPaVn_19zWcIzR5r7qy59y/view?usp=sharing
 
 ## Credits
 
