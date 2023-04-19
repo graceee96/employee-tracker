@@ -17,7 +17,7 @@ function viewAllRoles(callback) {
 
     db.query(rolesTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
 
-    callback();
+    setTimeout(callback, 1000);
 };
 
 module.exports = viewAllRoles;

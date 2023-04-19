@@ -59,7 +59,7 @@ function updateEmployeeRole(callback) {
                                 };
                             });
 
-                            callback();
+                            setTimeout(callback, 1000);
                         });
                 };
             });

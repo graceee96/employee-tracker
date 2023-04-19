@@ -71,7 +71,7 @@ function addEmployee(callback) {
                                 }
                             })
 
-                            callback();
+                            setTimeout(callback, 1000);
                         });
                 };
             });

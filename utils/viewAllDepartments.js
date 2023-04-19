@@ -18,7 +18,7 @@ function viewAllDepartments(callback) {
         console.log('\n' + consoleTable.getTable(results));
     });
 
-    callback();
+    setTimeout(callback, 1000);
 };
 
 module.exports = viewAllDepartments;

@@ -35,7 +35,7 @@ function addDepartment(callback) {
                 }
             });
 
-            callback();
+            setTimeout(callback, 1000);
         })
 };
 

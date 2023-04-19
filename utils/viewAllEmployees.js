@@ -27,7 +27,7 @@ FROM employee e
 
     db.query(employeeTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
 
-    callback();
+    setTimeout(callback, 1000);
 };
 
 module.exports = viewAllEmployees;

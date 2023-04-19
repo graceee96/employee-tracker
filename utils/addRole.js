@@ -53,7 +53,7 @@ function addRole(callback) {
                         };
                     });
 
-                    callback()
+                    setTimeout(callback, 1000);
                 });
         };
     });
