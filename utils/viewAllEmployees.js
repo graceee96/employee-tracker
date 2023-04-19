@@ -11,7 +11,7 @@ const db = mysql.createConnection(
     }
 );
 
-function viewAllEmployees() {
+function viewAllEmployees(callback) {
     const employeeTable = `SELECT
 	e.id,
     e.first_name,
@@ -26,6 +26,8 @@ FROM employee e
 	ORDER BY e.id;`;
 
     db.query(employeeTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
+
+    callback();
 };
 
 module.exports = viewAllEmployees;

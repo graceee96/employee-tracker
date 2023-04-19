@@ -11,7 +11,7 @@ const db = mysql.createConnection(
     }
 );
 
-function addEmployee() {
+function addEmployee(callback) {
     db.query('SELECT * FROM role', (err, result) => {
         if (err) {
             console.log(err)
@@ -70,6 +70,8 @@ function addEmployee() {
                                     console.log(`Successfully added new employee: ${input.new_firstname} ${input.new_lastname}`)
                                 }
                             })
+
+                            callback();
                         });
                 };
             });

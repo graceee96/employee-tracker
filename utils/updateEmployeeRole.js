@@ -11,7 +11,7 @@ const db = mysql.createConnection(
     }
 );
 
-function updateEmployeeRole() {
+function updateEmployeeRole(callback) {
     db.query('SELECT * FROM role', (err, result) => {
         if (err) {
             console.log(err);
@@ -58,6 +58,8 @@ function updateEmployeeRole() {
                                     console.log(`Successfully updated role`)
                                 };
                             });
+
+                            callback();
                         });
                 };
             });

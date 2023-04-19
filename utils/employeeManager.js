@@ -28,42 +28,40 @@ function employeeManager() {
         })
         .then((input) => {
             // console.log(input);
-            
+
             //switch statements
             switch (input.task) {
                 case 'View all departments':
-                    viewAllDepartments();
+                    viewAllDepartments(employeeManager);
 
                     break;
                 case 'View all roles':
-                    viewAllRoles();
+                    viewAllRoles(employeeManager);
 
                     break;
                 case 'View all employees':
-                    viewAllEmployees();
+                    viewAllEmployees(employeeManager);
 
                     break;
                 case 'Add a department':
-                    addDepartment();
+                    addDepartment(employeeManager);
 
                     break;
                 case 'Add a role':
-                    addRole();
+                    addRole(employeeManager);
 
                     break;
                 case 'Add an employee':
-                    addEmployee();
+                    addEmployee(employeeManager);
 
                     break;
                 case 'Update an employee role':
-                    updateEmployeeRole();
+                    updateEmployeeRole(employeeManager);
 
                     break;
                 case 'Quit':
                     process.exit(0);
             };
-
-            // employeeManager();
         })
 }
 

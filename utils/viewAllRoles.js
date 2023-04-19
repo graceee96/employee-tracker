@@ -11,12 +11,13 @@ const db = mysql.createConnection(
     }
 );
 
-function viewAllRoles() {
+function viewAllRoles(callback) {
     
     const rolesTable = 'SELECT role.id, role.title AS title, role.salary, department.name AS department FROM role LEFT JOIN department ON role.department_id = department.id';
 
     db.query(rolesTable, (err, results) => console.log('\n' + consoleTable.getTable(results)));
 
+    callback();
 };
 
 module.exports = viewAllRoles;

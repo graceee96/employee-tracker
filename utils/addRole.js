@@ -11,7 +11,7 @@ const db = mysql.createConnection(
     }
 );
 
-function addRole() {
+function addRole(callback) {
     db.query('SELECT * FROM department', (err, result) => {
         if (err) {
             console.log(err)
@@ -52,6 +52,8 @@ function addRole() {
                             console.log(`Successfully added new role: ${input.title}`)
                         };
                     });
+
+                    callback()
                 });
         };
     });

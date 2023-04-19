@@ -11,12 +11,14 @@ const db = mysql.createConnection(
     }
 );
 
-function viewAllDepartments() {
+function viewAllDepartments(callback) {
     const departmentTable = 'SELECT department.id AS department_id, department.name AS department FROM department';
 
     db.query(departmentTable, (err, results) => {
         console.log('\n' + consoleTable.getTable(results));
     });
+
+    callback();
 };
 
 module.exports = viewAllDepartments;

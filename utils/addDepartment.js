@@ -12,7 +12,7 @@ const db = mysql.createConnection(
 );
 
 
-function addDepartment() {
+function addDepartment(callback) {
     inquirer
         //prompt user to input new department
         .prompt({
@@ -35,6 +35,7 @@ function addDepartment() {
                 }
             });
 
+            callback();
         })
 };
 
