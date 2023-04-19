@@ -57,12 +57,13 @@ function employeeManager() {
                     break;
                 case 'Update an employee role':
                     updateEmployeeRole();
-                    
+
                     break;
                 case 'Quit':
-                    return;
+                    process.exit(0);
             };
 
+            // employeeManager();
         })
 }
 

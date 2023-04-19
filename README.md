@@ -21,6 +21,7 @@ After installation, run ```node index.js``` to start the application. Navigate t
 Made with help from Scott McAnally (tutor)
 
 ### Resources Accessed
+* Aashiya Mittal - [How to Exit a Process in Node.js: process.exit() Method](https://www.knowledgehut.com/blog/web-development/node-js-process-exit#using-process.exit())
 * Title made with [Text to ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Employee%0AManager) by [patorjk](https://github.com/patorjk)
 * Esat Erkec - [SQL multiple joins for beginners with examples](https://www.sqlshack.com/sql-multiple-joins-for-beginners-with-examples/)
 * SQLServerTutorial.Net - [SQL Server Self Join](https://www.sqlservertutorial.net/sql-server-basics/sql-server-self-join/)
